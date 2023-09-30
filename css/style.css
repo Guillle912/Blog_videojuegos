@@ -7,11 +7,7 @@
     --gris-default: #6C757D;
 }
 
-img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
+img {}
 
 * {
     margin: 0;
@@ -60,7 +56,9 @@ img {
 
         & img {
             min-width: 150px;
+            width: 100%;
 
+            display: block;
         }
     }
 
@@ -133,6 +131,7 @@ img {
     width: 100%;
     height: calc(100vh - 120px);
     display: flex;
+    padding-left: 40px;
 
 
     & div {
@@ -140,7 +139,6 @@ img {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        padding-left: 40px;
 
         & p:first-child {
             color: white;
@@ -183,4 +181,155 @@ img {
         background-size: cover;
         clip-path: circle(70% at 92% 50%);
     }
+}
+
+
+.destacados {
+    width: 100%;
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    flex-wrap: wrap;
+    gap: 50px;
+
+    & .game {
+        width: 45%;
+        height: 380px;
+        background: linear-gradient(45deg, rgb(141, 72, 72), blue);
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        position: relative;
+
+        &:hover {
+            & .content {
+                opacity: 1;
+                left: 0;
+            }
+
+            & img {
+                left: 80%;
+                height: 400px;
+            }
+        }
+
+        & img {
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translate(-50%);
+            height: 380px;
+            z-index: 1;
+            transition: all 0.5s;
+        }
+
+        & .content {
+            position: relative;
+            left: 20%;
+            opacity: 0;
+            width: 50%;
+            color: white;
+            padding-left: 30px;
+            transition: all 0.5s;
+
+
+
+            & h3 {
+                font-size: 35px;
+                font-weight: 700;
+                letter-spacing: 0;
+                text-transform: uppercase;
+
+            }
+
+            & p {
+                font-size: 18px;
+                display: inline-block;
+                padding: 20px 0;
+            }
+
+            & a {
+                text-decoration: none;
+                color: #000;
+                display: inline-block;
+                padding: 10px 20px;
+                font-weight: 700;
+                font-size: 20px;
+                background-color: white;
+            }
+        }
+
+    }
+
+    & .game:nth-child(2) {
+        background: linear-gradient(45deg, rgb(144, 54, 54), rgb(0, 255, 68));
+    }
+
+    & .game:nth-child(3) {
+        background: linear-gradient(45deg, rgb(144, 54, 54), rgb(255, 0, 225));
+    }
+
+    & .game:nth-child(4) {
+        background: linear-gradient(45deg, rgb(144, 54, 54), rgb(174, 255, 0));
+    }
+}
+
+
+
+@media(width <=1500px) {
+
+    .hero figure {
+        background-size: auto;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .destacados .game {
+        width: 100%;
+        min-width: 400px;
+
+    }
+}
+
+@media(width <=500px) {
+
+    .hero {
+        flex-direction: column;
+        height: auto;
+        background-image: url(../img/game1.png);
+        background-size: cover;
+        background-position: center;
+
+        color: white;
+
+
+    }
+
+    .destacados .game {
+
+        height: auto;
+        padding: 20px 0;
+    }
+}
+
+
+@media(width <=840px) {
+
+    .hero {
+        flex-direction: column;
+        height: auto;
+        background-image: url(../img/game1.png);
+        background-size: cover;
+        background-position: center;
+        padding: 40px 40px;
+        color: white;
+
+        & div {
+            width: 100%;
+        }
+    }
+
+
 }
