@@ -278,7 +278,7 @@ img {}
 
 
 
-@media(width <=1500px) {
+@media(width <=1200px) {
 
     .hero figure {
         background-size: auto;
